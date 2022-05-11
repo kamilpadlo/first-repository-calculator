@@ -35,13 +35,17 @@ const showHistory = function () {
 	historyArray.splice(0, historyArray.length);
 };
 
+const makeOperation = function () {
+	displayResult.textContent = result;
+	showHistory();
+	clearInput();
+};
+
 add.addEventListener("click", function () {
 	if (firstNumber.value != "" && secondNumber.value != "") {
 		operator = "+";
 		result = +firstNumber.value + +secondNumber.value;
-		displayResult.textContent = result;
-		showHistory();
-		clearInput();
+		makeOperation();
 	}
 });
 
@@ -49,9 +53,7 @@ subtract.addEventListener("click", function () {
 	if (firstNumber.value != "" && secondNumber.value != "") {
 		operator = "-";
 		result = +firstNumber.value - +secondNumber.value;
-		displayResult.textContent = result;
-		showHistory();
-		clearInput();
+		makeOperation();
 	}
 });
 
@@ -59,9 +61,7 @@ multiply.addEventListener("click", function () {
 	if (firstNumber.value != "" && secondNumber.value != "") {
 		operator = "*";
 		result = +firstNumber.value * +secondNumber.value;
-		displayResult.textContent = result;
-		showHistory();
-		clearInput();
+		makeOperation();
 	}
 });
 
@@ -69,9 +69,7 @@ divide.addEventListener("click", function () {
 	if (firstNumber.value != "" && secondNumber.value != "") {
 		operator = "/";
 		result = +firstNumber.value / +secondNumber.value;
-		displayResult.textContent = result;
-		showHistory();
-		clearInput();
+		makeOperation();
 	}
 });
 
@@ -82,4 +80,6 @@ clear.addEventListener("click", function () {
 
 historyBtn.addEventListener("click", function () {
 	historyContainer.classList.toggle("history-active");
+
+	historyContainer.style.transform = "translateX(" + 200 + "px)";
 });
