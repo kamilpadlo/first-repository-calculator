@@ -77,9 +77,3 @@ clear.addEventListener("click", function () {
 	displayResult.textContent = "=";
 	clearInput();
 });
-
-historyBtn.addEventListener("click", function () {
-	historyContainer.classList.toggle("history-active");
-
-	historyContainer.style.transform = "translateX(" + 200 + "px)";
-});
