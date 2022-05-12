@@ -45,13 +45,9 @@ body {
 	background-color: lightgray;
 	z-index: 1;
 	position: relative;
-	display: none;
+	left: 200px;
+	bottom: 7px;
 }
 .history-head p {
 	margin: 15px;
-}
-
-.history-active {
-	display: block;
-	bottom: 8px;
 }
