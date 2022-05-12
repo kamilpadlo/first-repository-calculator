@@ -80,6 +80,4 @@ clear.addEventListener("click", function () {
 
 historyBtn.addEventListener("click", function () {
 	historyContainer.classList.toggle("history-active");
-
-	historyContainer.style.transform = "translateX(" + 200 + "px)";
 });

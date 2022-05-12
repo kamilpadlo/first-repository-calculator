@@ -46,7 +46,6 @@ body {
 	z-index: 1;
 	position: relative;
 	display: none;
-	transform: all 2s;
 }
 .history-head p {
 	margin: 15px;
@@ -54,6 +53,5 @@ body {
 
 .history-active {
 	display: block;
-	/* left: 200px; */
 	bottom: 8px;
 }
