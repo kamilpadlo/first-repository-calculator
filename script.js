@@ -60,6 +60,7 @@ subtract.addEventListener("click", function () {
 		operator = "-";
 		result = +firstNumber.value - +secondNumber.value;
 		makeOperation();
+		showButtonsCopy();
 	} else {
 		displayNotification();
 	}
@@ -70,6 +71,7 @@ multiply.addEventListener("click", function () {
 		operator = "*";
 		result = +firstNumber.value * +secondNumber.value;
 		makeOperation();
+		showButtonsCopy();
 	} else {
 		displayNotification();
 	}
@@ -80,6 +82,7 @@ divide.addEventListener("click", function () {
 		operator = "/";
 		result = +firstNumber.value / +secondNumber.value;
 		makeOperation();
+		showButtonsCopy();
 	} else {
 		displayNotification();
 	}
