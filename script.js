@@ -53,6 +53,10 @@ const hideButtonsCopy = function () {
 	btnCopyB.classList.remove("btn-copy-active");
 };
 
+const displayNotification = function () {
+	alert("Please, fill both fields with numbers.");
+};
+
 btnCopyA.addEventListener("click", function () {
 	firstNumber.value = result;
 });
