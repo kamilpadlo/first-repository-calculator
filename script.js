@@ -41,11 +41,17 @@ const makeOperation = function () {
 	clearInput();
 };
 
+const displayNotification = function () {
+	alert("Please, fill both fields with numbers.");
+};
+
 add.addEventListener("click", function () {
 	if (firstNumber.value != "" && secondNumber.value != "") {
 		operator = "+";
 		result = +firstNumber.value + +secondNumber.value;
 		makeOperation();
+	} else {
+		displayNotification();
 	}
 });
 
@@ -54,6 +60,8 @@ subtract.addEventListener("click", function () {
 		operator = "-";
 		result = +firstNumber.value - +secondNumber.value;
 		makeOperation();
+	} else {
+		displayNotification();
 	}
 });
 
@@ -62,6 +70,8 @@ multiply.addEventListener("click", function () {
 		operator = "*";
 		result = +firstNumber.value * +secondNumber.value;
 		makeOperation();
+	} else {
+		displayNotification();
 	}
 });
 
@@ -70,6 +80,8 @@ divide.addEventListener("click", function () {
 		operator = "/";
 		result = +firstNumber.value / +secondNumber.value;
 		makeOperation();
+	} else {
+		displayNotification();
 	}
 });
 
