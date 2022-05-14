@@ -67,6 +67,8 @@ add.addEventListener("click", function () {
 		result = +firstNumber.value + +secondNumber.value;
 		makeOperation();
 		showButtonsCopy();
+	} else {
+		displayNotification();
 	}
 });
 
@@ -76,6 +78,8 @@ subtract.addEventListener("click", function () {
 		result = +firstNumber.value - +secondNumber.value;
 		makeOperation();
 		showButtonsCopy();
+	} else {
+		displayNotification();
 	}
 });
 
@@ -85,6 +89,8 @@ multiply.addEventListener("click", function () {
 		result = +firstNumber.value * +secondNumber.value;
 		makeOperation();
 		showButtonsCopy();
+	} else {
+		displayNotification();
 	}
 });
 
@@ -94,6 +100,8 @@ divide.addEventListener("click", function () {
 		result = +firstNumber.value / +secondNumber.value;
 		makeOperation();
 		showButtonsCopy();
+	} else {
+		displayNotification();
 	}
 });
 
