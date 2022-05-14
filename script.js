@@ -9,6 +9,8 @@ const displayResult = document.querySelector(".result");
 const historyBtn = document.querySelector(".history-btn");
 const historyContainer = document.querySelector(".history-container");
 const historyContent = document.querySelector(".history");
+const btnCopyA = document.querySelector(".copy-A");
+const btnCopyB = document.querySelector(".copy-B");
 
 const clearInput = function () {
 	firstNumber.value = "";
@@ -41,15 +43,30 @@ const makeOperation = function () {
 	clearInput();
 };
 
-const displayNotification = function () {
-	alert("Please, fill both fields with numbers.");
+const showButtonsCopy = function () {
+	btnCopyA.classList.add("btn-copy-active");
+	btnCopyB.classList.add("btn-copy-active");
 };
+
+const hideButtonsCopy = function () {
+	btnCopyA.classList.remove("btn-copy-active");
+	btnCopyB.classList.remove("btn-copy-active");
+};
+
+btnCopyA.addEventListener("click", function () {
+	firstNumber.value = result;
+});
+
+btnCopyB.addEventListener("click", function () {
+	secondNumber.value = result;
+});
 
 add.addEventListener("click", function () {
 	if (firstNumber.value != "" && secondNumber.value != "") {
 		operator = "+";
 		result = +firstNumber.value + +secondNumber.value;
 		makeOperation();
+		showButtonsCopy();
 	} else {
 		displayNotification();
 	}
@@ -91,4 +108,5 @@ divide.addEventListener("click", function () {
 clear.addEventListener("click", function () {
 	displayResult.textContent = "=";
 	clearInput();
+	hideButtonsCopy();
 });
