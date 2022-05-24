@@ -10,19 +10,32 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="inside-container">
-				<input class="num-A" type="number" />
-				<input class="num-B" type="number" />
-				<div class="result">
-					<p>=</p>
+			<div class="calculator-area">
+				<div class="inside-container">
+					<input class="num-A" type="number" placeholder="A" />
+					<input class="num-B" type="number" placeholder="B" />
+					<div class="result-outside">
+						<button class="copy-A">A</button>
+						<button class="copy-B">B</button>
+						<div class="result">
+							<p>=</p>
+						</div>
+					</div>
+
+					<div class="wrapper">
+						<button class="add">+</button>
+						<button class="subtract">-</button>
+						<button class="multiply">*</button>
+						<button class="divide">/</button>
+					</div>
+					<button class="clear">C</button>
 				</div>
-				<div class="wrapper">
-					<button class="add">+</button>
-					<button class="subtract">-</button>
-					<button class="multiply">*</button>
-					<button class="divide">/</button>
+			</div>
+			<div class="history-area">
+				<div class="history-container" style="overflow-y: auto">
+					<div class="history-head"><p>History:</p></div>
+					<ul class="history"></ul>
 				</div>
-				<button class="clear">C</button>
 			</div>
 		</div>
 	</body>
