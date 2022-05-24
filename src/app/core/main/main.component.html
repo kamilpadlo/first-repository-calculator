@@ -1,73 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>calculator app</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="calculator-area">
-        <div class="inside-container">
-          <input
-            [(ngModel)]="textInsideA"
-            class="num-A"
-            type="number"
-            placeholder="A"
-          />
-          <input
-            [(ngModel)]="textInsideB"
-            class="num-B"
-            type="number"
-            placeholder="B"
-          />
-          <div class="result-outside">
-            <button
-              (click)="copyResultA()"
-              class="copy-A"
-              [ngClass]="{
-                'btn-copy-active': isActive === true,
-                'copy-A': true
-              }"
-            >
-              A
-            </button>
-            <button
-              (click)="copyResultB()"
-              class="copy-B"
-              [ngClass]="{
-                'btn-copy-active': isActive === true,
-                'copy-B': true
-              }"
-            >
-              B
-            </button>
-            <div class="result">
-              <p>{{ result }}</p>
-            </div>
-          </div>
-
-          <div class="wrapper">
-            <button (click)="add()" class="add">+</button>
-            <button (click)="subtract()" class="subtract">-</button>
-            <button (click)="multiply()" class="multiply">*</button>
-            <button (click)="divide()" class="divide">/</button>
-          </div>
-          <button (click)="clear()" class="clear">C</button>
+<div class="container">
+  <div class="calculator-area">
+    <div class="inside-container">
+      <input
+        [(ngModel)]="textInsideA"
+        class="num-A"
+        type="number"
+        placeholder="A"
+      />
+      <input
+        [(ngModel)]="textInsideB"
+        class="num-B"
+        type="number"
+        placeholder="B"
+      />
+      <div class="result-outside">
+        <button
+          (click)="copyResultA()"
+          class="copy-A"
+          [ngClass]="{
+            'btn-copy-active': isActive === true,
+            'copy-A': true
+          }"
+        >
+          A
+        </button>
+        <button
+          (click)="copyResultB()"
+          class="copy-B"
+          [ngClass]="{
+            'btn-copy-active': isActive === true,
+            'copy-B': true
+          }"
+        >
+          B
+        </button>
+        <div class="result">
+          <p>{{ result }}</p>
         </div>
       </div>
-      <div class="history-area">
-        <div class="history-container" style="overflow-y: auto">
-          <div class="history-head"><p>History:</p></div>
-          <ul class="history">
-            <li *ngFor="let result of equationAsStringArray">
-              {{ result }}
-            </li>
-          </ul>
-        </div>
+
+      <div class="wrapper">
+        <button (click)="add()" class="add">+</button>
+        <button (click)="subtract()" class="subtract">-</button>
+        <button (click)="multiply()" class="multiply">*</button>
+        <button (click)="divide()" class="divide">/</button>
       </div>
+      <button (click)="clear()" class="clear">C</button>
     </div>
-  </body>
-</html>
+  </div>
+  <div class="history-area">
+    <div class="history-container" style="overflow-y: auto">
+      <div class="history-head"><p>History:</p></div>
+      <ul class="history">
+        <li *ngFor="let result of equationAsStringArray">
+          {{ result }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
