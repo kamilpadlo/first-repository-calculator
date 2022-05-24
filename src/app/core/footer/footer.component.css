@@ -1,0 +1,14 @@
+footer {
+  position: absolute;
+}
+.footer-container {
+  width: 100vw;
+  height: 50px;
+  background: #999;
+  text-align: center;
+  font-size: 24px;
+  font-family: sans-serif;
+  line-height: 50px;
+  position: relative;
+  top: 30px;
+}
