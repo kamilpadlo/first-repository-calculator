@@ -1,18 +1,25 @@
 <div class="container">
   <div class="calculator-area">
     <div class="inside-container">
-      <input
-        [(ngModel)]="textInsideA"
-        class="num-A"
-        type="number"
-        placeholder="A"
-      />
-      <input
-        [(ngModel)]="textInsideB"
-        class="num-B"
-        type="number"
-        placeholder="B"
-      />
+      <mat-form-field class="form-field" appearance="fill">
+        <mat-label>Number</mat-label>
+        <input
+          [(ngModel)]="textInsideA"
+          matInput
+          placeholder="A"
+          type="number"
+        />
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="fill">
+        <mat-label>Number</mat-label>
+        <input
+          [(ngModel)]="textInsideB"
+          matInput
+          placeholder="B"
+          type="number"
+        />
+      </mat-form-field>
+
       <div class="result-outside">
         <button
           (click)="copyResultA()"
@@ -40,17 +47,42 @@
       </div>
 
       <div class="wrapper">
-        <button (click)="add()" class="add">+</button>
-        <button (click)="subtract()" class="subtract">-</button>
-        <button (click)="multiply()" class="multiply">*</button>
-        <button (click)="divide()" class="divide">/</button>
+        <button mat-flat-button color="primary" (click)="add()" class="add">
+          <mat-icon>add</mat-icon>
+        </button>
+        <button
+          mat-flat-button
+          color="primary"
+          (click)="subtract()"
+          class="subtract"
+        >
+          <mat-icon>remove</mat-icon>
+        </button>
+        <button
+          mat-flat-button
+          color="primary"
+          (click)="multiply()"
+          class="multiply"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+        <button
+          mat-flat-button
+          color="primary"
+          (click)="divide()"
+          class="divide"
+        >
+          /
+        </button>
       </div>
-      <button (click)="clear()" class="clear">C</button>
+      <button mat-flat-button color="primary" (click)="clear()" class="clear">
+        C
+      </button>
     </div>
   </div>
   <div class="history-area">
     <div class="history-container" style="overflow-y: auto">
-      <div class="history-head"><p>History:</p></div>
+      <div class="history-head"><p>history</p></div>
       <ul class="history">
         <li *ngFor="let result of equationAsStringArray">
           {{ result }}

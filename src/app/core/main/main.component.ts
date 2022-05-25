@@ -13,10 +13,8 @@ export class MainComponent implements OnInit {
   title = 'calculator-angular';
   equationArray: string[] = [];
   equationAsStringArray: string[] = [];
-  addSign = '+';
   textInsideA: string = '';
   textInsideB: string = '';
-  numA = '';
   sign: string = '';
   result: any = '=';
   isActive: boolean = false;
