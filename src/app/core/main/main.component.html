@@ -6,22 +6,26 @@
           <div class="result-inside">
             <p>{{ result }}</p>
             <button
-              (click)="copyResultA()"
+              mat-mini-fab
+              color="primary"
               class="copy-A"
               [ngClass]="{
                 'btn-copy-active': isActive === true,
                 'copy-A': true
               }"
+              (click)="copyResultA()"
             >
               A
             </button>
             <button
-              (click)="copyResultB()"
+              mat-mini-fab
+              color="primary"
               class="copy-B"
               [ngClass]="{
                 'btn-copy-active': isActive === true,
                 'copy-B': true
               }"
+              (click)="copyResultB()"
             >
               B
             </button>

@@ -10,14 +10,12 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  title = 'calculator-angular';
   equationArray: string[] = [];
   equationAsStringArray: string[] = [];
   textInsideA: any = '';
   textInsideB: any = '';
   sign: string = '';
   result: any = '=';
-
   isActive: boolean = false;
 
   clearInputFields() {
@@ -28,11 +26,16 @@ export class MainComponent implements OnInit {
   copyResultA() {
     this.textInsideA = this.result;
   }
+
   copyResultB() {
     this.textInsideB = this.result;
   }
+
   displayNotification() {
     alert('Please, fill both fields with numbers.');
+  }
+  divideZeroAlert() {
+    alert(`You can't divide by 0.`);
   }
 
   getSign(operator: string, numA: any, numB: any) {
@@ -81,8 +84,12 @@ export class MainComponent implements OnInit {
   }
 
   divide() {
-    this.sign = '/';
-    this.makeCalculations();
+    if (this.textInsideB == '0') {
+      this.divideZeroAlert();
+    } else {
+      this.sign = '/';
+      this.makeCalculations();
+    }
   }
 
   clear() {

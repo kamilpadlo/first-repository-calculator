@@ -33,9 +33,7 @@ body {
   grid-template-columns: 1fr;
   grid-gap: 5px;
 }
-/* .result {
-  background: #afb7ba;
-} */
+
 .result-inside {
   position: relative;
   width: 100%;
@@ -56,15 +54,18 @@ body {
 }
 .copy-A {
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: 0px;
   display: none;
+  font-size: 20px;
+  transform: scale(0.7);
 }
 .copy-B {
   position: absolute;
-  top: 5px;
+  top: 0px;
   left: 35px;
   display: none;
+  font-size: 20px;
+  transform: scale(0.7);
 }
 
 .btn-copy-active {
@@ -77,12 +78,6 @@ body {
   grid-gap: 5px;
 }
 
-.history-container {
-  background: #7c8487;
-  /* z-index: 1; */
-  /* position: relative; */
-  /* left: 225px; */
-}
 .history-head p {
   margin: 15px;
   text-transform: uppercase;
