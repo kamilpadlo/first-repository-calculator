@@ -1,0 +1,28 @@
+.history-area {
+  display: inline-block;
+  height: 400px;
+  width: 300px;
+  background: #7c8487;
+}
+.history-head p {
+  margin: 15px;
+  text-transform: uppercase;
+  color: whitesmoke;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+mat-list-item {
+  color: black !important;
+}
+ul {
+  list-style-type: none;
+}
+li {
+  margin-left: -25px;
+  color: whitesmoke;
+}
+input {
+  color: whitesmoke;
+}

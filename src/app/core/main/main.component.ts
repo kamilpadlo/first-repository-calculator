@@ -10,8 +10,8 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  equationArray: string[] = [];
   equationAsStringArray: string[] = [];
+  equationArray: string[] = [];
   textInsideA: any = '';
   textInsideB: any = '';
   sign: string = '';

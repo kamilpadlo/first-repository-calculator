@@ -1,4 +1,4 @@
-footer {
+/* footer {
   position: absolute;
 }
 .footer-container {
@@ -11,4 +11,15 @@ footer {
   line-height: 50px;
   position: relative;
   top: 30px;
+} */
+.footer {
+  display: flex;
+  justify-content: flex-start;
+  position: absolute;
+  bottom: -12px;
+  width: 100%;
+}
+.footer2 {
+  display: flex;
+  justify-content: space-around;
 }

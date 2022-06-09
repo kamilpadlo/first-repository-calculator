@@ -16,9 +16,11 @@ import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HistoryComponent } from './core/history/history.component';
+
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, MainComponent, FooterComponent],
+  declarations: [AppComponent, HeaderComponent, MainComponent, FooterComponent, HistoryComponent],
   imports: [
     BrowserModule,
     FormsModule,
