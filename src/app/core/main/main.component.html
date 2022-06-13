@@ -40,6 +40,7 @@
             type="number"
           />
         </mat-form-field>
+
         <mat-form-field class="form-field" appearance="fill">
           <mat-label>Number</mat-label>
           <input
@@ -49,7 +50,6 @@
             type="number"
           />
         </mat-form-field>
-
         <div class="wrapper">
           <button mat-flat-button color="primary" (click)="add()" class="add">
             <mat-icon>add</mat-icon>
@@ -84,6 +84,11 @@
         </button>
       </div>
     </div>
-    <app-history [test]="equationAsStringArray"> </app-history>
+    <app-history
+      [historyResult]="equationAsStringArray"
+      (numA)="receiveNumA($event)"
+      (numB)="receiveNumB($event)"
+    >
+    </app-history>
   </div>
 </div>

@@ -7,8 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
   constructor() {}
+  num1 = '';
+  num2 = '';
 
   ngOnInit(): void {}
+
+  receiveNumA($event: any) {
+    this.num1 = $event;
+    this.textInsideA = +this.num1;
+  }
+  receiveNumB($event: any) {
+    this.num2 = $event;
+    this.textInsideB = +this.num2;
+  }
 
   equationAsStringArray: string[] = [];
   equationArray: string[] = [];
