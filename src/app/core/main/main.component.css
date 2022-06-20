@@ -14,14 +14,14 @@ body {
 .inside-container {
   display: flex;
   flex-direction: row;
-  /* max-width: 1250px; */
 }
 .calculator-area {
   display: flex;
 
+  min-height: 400px;
   height: 50vh;
-  width: 20vw;
   min-width: 250px;
+  width: 20vw;
   background: #8f9598;
 }
 
@@ -100,4 +100,11 @@ li {
 }
 input {
   color: whitesmoke;
+}
+
+@media (max-width: 600px) {
+  .inside-container {
+    flex-direction: column;
+    margin-top: 250px;
+  }
 }

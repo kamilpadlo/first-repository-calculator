@@ -1,8 +1,9 @@
 .history-area {
   display: inline-block;
+  min-height: 400px;
   height: 50vh;
-  width: 20vw;
   min-width: 250px;
+  width: 20vw;
   background: #7c8487;
 }
 .history-head p {
