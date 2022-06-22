@@ -1,25 +1,11 @@
-/* footer {
-  position: absolute;
-}
-.footer-container {
-  width: 100vw;
-  height: 50px;
-  background: #999;
-  text-align: center;
-  font-size: 24px;
-  font-family: sans-serif;
-  line-height: 50px;
-  position: relative;
-  top: 30px;
-} */
 .footer {
   display: flex;
   justify-content: flex-start;
-  position: absolute;
   bottom: -12px;
   width: 100%;
 }
 .footer2 {
   display: flex;
   justify-content: space-around;
+  height: 69px;
 }

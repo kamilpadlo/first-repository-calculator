@@ -1,26 +1,28 @@
-<p>
-  <mat-toolbar color="primary">
-    <span>Header</span>
-    <span class="space"></span>
-    <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>more_vert</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button
-        mat-menu-item
-        (click)="openSnackBar('kupa pokrojona pomyślnie', 'potwierdzam')"
-      >
-        <mat-icon>dialpad</mat-icon>
-        <span>pokrój kupe</span>
+<header>
+  <p>
+    <mat-toolbar color="primary">
+      <span>Header</span>
+      <span class="space"></span>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
       </button>
-      <button mat-menu-item disabled>
-        <mat-icon>voicemail</mat-icon>
-        <span>Check voice mail</span>
-      </button>
-      <button mat-menu-item>
-        <mat-icon>notifications_off</mat-icon>
-        <span>Disable alerts</span>
-      </button>
-    </mat-menu>
-  </mat-toolbar>
-</p>
+      <mat-menu #menu="matMenu">
+        <button
+          mat-menu-item
+          (click)="openSnackBar('kupa pokrojona pomyślnie', 'potwierdzam')"
+        >
+          <mat-icon>dialpad</mat-icon>
+          <span>pokrój kupe</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>voicemail</mat-icon>
+          <span>Check voice mail</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable alerts</span>
+        </button>
+      </mat-menu>
+    </mat-toolbar>
+  </p>
+</header>
