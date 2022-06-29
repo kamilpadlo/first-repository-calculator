@@ -1,11 +1,17 @@
 .footer {
   display: flex;
   justify-content: flex-start;
-  bottom: -12px;
   width: 100%;
 }
 .footer2 {
   display: flex;
   justify-content: space-around;
   height: 69px;
+}
+
+@media (min-width: 1920px) {
+  .footer2 {
+    position: fixed;
+    bottom: 0px;
+  }
 }
