@@ -1,0 +1,16 @@
+<div class="history-area" style="overflow-y: auto">
+  <div class="history-container">
+    <div class="history-head"><p>history</p></div>
+    <ul class="history">
+      <li
+        (click)="checkResult(result)"
+        (click)="sendNumA()"
+        (click)="sendNumB()"
+        class="result-li"
+        *ngFor="let result of equationAsStringArray"
+      >
+        <p>{{ result }}</p>
+      </li>
+    </ul>
+  </div>
+</div>

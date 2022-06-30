@@ -1,58 +1,76 @@
-body {
-  width: 100vw;
-  height: 100vh;
-}
+/* body {
+  min-height: 100vh;
+  position: relative;
+  background: red !important;
+} */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 80vh;
+  min-height: 85vh;
+  overflow: hidden;
+  /* margin-bottom: 100%; */
+}
+.inside-container {
+  display: flex;
+  flex-direction: row;
 }
 .calculator-area {
   display: flex;
-  position: absolute;
 
-  height: 300px;
-  width: 200px;
-  background: #ccc;
+  min-height: 400px;
+  height: 50vh;
+  min-width: 250px;
+  width: 20vw;
+  background: #8f9598;
 }
-.inside-container {
+
+.inside-calculator-container {
+  width: 100%;
+  min-width: 200px;
   margin: 10px;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 5px;
 }
 
-.result-outside {
+.result-inside {
   position: relative;
+  width: 100%;
+  height: 100%;
 }
-.copy-A {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  display: none;
+.result-inside p {
+  line-height: 80px;
 }
-.copy-B {
-  position: absolute;
-  top: 5px;
-  left: 35px;
-  display: none;
-}
-
-.btn-copy-active {
-  display: block;
-}
-
 .result {
   width: 100%;
   height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #eee;
+  background-color: whitesmoke;
   text-align: center;
   font-size: 24px;
+}
+.copy-A {
+  position: absolute;
+  top: -5px;
+  display: none;
+  font-size: 20px;
+  transform: scale(0.6);
+}
+.copy-B {
+  position: absolute;
+  top: -5px;
+  left: 35px;
+  display: none;
+  font-size: 20px;
+  transform: scale(0.6);
+}
+
+.btn-copy-active {
+  display: block;
 }
 
 .wrapper {
@@ -60,14 +78,33 @@ body {
   grid-template-columns: 1fr 1fr;
   grid-gap: 5px;
 }
-.history-container {
-  height: 300px;
-  width: 200px;
-  background-color: lightgray;
-  z-index: 1;
-  position: relative;
-  left: 200px;
+.clear,
+.divide {
+  font-size: 24px;
 }
-.history-head p {
-  margin: 15px;
+
+.copy-A,
+.copy-B {
+  background: #d11f69;
+  color: white;
+}
+
+mat-list-item {
+  color: black !important;
+}
+ul {
+  list-style-type: none;
+}
+li {
+  margin-left: -25px;
+  color: whitesmoke;
+}
+input {
+  color: whitesmoke;
+}
+
+@media (max-width: 600px) {
+  .inside-container {
+    flex-direction: column;
+  }
 }

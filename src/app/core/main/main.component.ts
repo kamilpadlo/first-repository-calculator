@@ -7,16 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
   constructor() {}
+  num1 = '';
+  num2 = '';
 
   ngOnInit(): void {}
 
-  title = 'calculator-angular';
-  equationArray: string[] = [];
+  receiveNumA($event: any) {
+    this.num1 = $event;
+    this.textInsideA = +this.num1;
+  }
+  receiveNumB($event: any) {
+    this.num2 = $event;
+    this.textInsideB = +this.num2;
+  }
+
   equationAsStringArray: string[] = [];
-  addSign = '+';
-  textInsideA: string = '';
-  textInsideB: string = '';
-  numA = '';
+  equationArray: string[] = [];
+  textInsideA: any = '';
+  textInsideB: any = '';
   sign: string = '';
   result: any = '=';
   isActive: boolean = false;
@@ -29,63 +37,69 @@ export class MainComponent implements OnInit {
   copyResultA() {
     this.textInsideA = this.result;
   }
+
   copyResultB() {
     this.textInsideB = this.result;
   }
+
   displayNotification() {
     alert('Please, fill both fields with numbers.');
   }
+  divideZeroAlert() {
+    alert(`You can't divide by 0.`);
+  }
+
+  getSign(operator: string, numA: any, numB: any) {
+    let calculate;
+    if (operator === '+') return (calculate = numA + numB);
+    else if (operator === '-') return (calculate = numA - numB);
+    else if (operator === '*') return (calculate = numA * numB);
+    else if (operator === '/') return (calculate = numA / numB);
+  }
+
   makeCalculations() {
-    this.equationArray = [];
-    this.equationArray.push(
-      this.textInsideA,
-      this.sign,
-      this.textInsideB,
-      '=',
-      this.result
-    );
-    this.isActive = true;
-    this.equationAsStringArray.push(this.equationArray.join(' '));
-    this.clearInputFields();
+    if (this.textInsideA !== '' && this.textInsideB !== '') {
+      this.result =
+        Math.round(
+          this.getSign(this.sign, this.textInsideA, this.textInsideB) * 100000
+        ) / 100000;
+      this.equationArray = [];
+      this.equationArray.push(
+        this.textInsideA,
+        this.sign,
+        this.textInsideB,
+        '=',
+        this.result
+      );
+      this.isActive = true;
+      this.equationAsStringArray.push(this.equationArray.join(' '));
+      this.clearInputFields();
+    } else {
+      this.displayNotification();
+    }
   }
 
   add() {
-    if (this.textInsideA !== '' && this.textInsideB !== '') {
-      this.sign = '+';
-      this.result = +this.textInsideA + +this.textInsideB;
-      this.makeCalculations();
-    } else {
-      this.displayNotification();
-    }
+    this.sign = '+';
+    this.makeCalculations();
   }
 
   subtract() {
-    if (this.textInsideA !== '' && this.textInsideB !== '') {
-      this.sign = '-';
-      this.result = +this.textInsideA - +this.textInsideB;
-      this.makeCalculations();
-    } else {
-      this.displayNotification();
-    }
+    this.sign = '-';
+    this.makeCalculations();
   }
 
   multiply() {
-    if (this.textInsideA !== '' && this.textInsideB !== '') {
-      this.sign = '*';
-      this.result = +this.textInsideA * +this.textInsideB;
-      this.makeCalculations();
-    } else {
-      this.displayNotification();
-    }
+    this.sign = '*';
+    this.makeCalculations();
   }
 
   divide() {
-    if (this.textInsideA !== '' && this.textInsideB !== '') {
-      this.sign = '/';
-      this.result = +this.textInsideA / +this.textInsideB;
-      this.makeCalculations();
+    if (this.textInsideB == '0') {
+      this.divideZeroAlert();
     } else {
-      this.displayNotification();
+      this.sign = '/';
+      this.makeCalculations();
     }
   }
 
